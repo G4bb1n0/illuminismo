@@ -1,279 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family:'Times New Roman', serif;
-      text-align: justify;
-    }
-
-    .navbar {
-border-bottom: 2px solid black; /* Puoi regolare lo spessore e il colore del bordo */
-      overflow: hidden;
-      background: linear-gradient(to bottom, 
-        #a82d2d 7.69%, white 7.69%, white 15.38%, #a82d2d 15.38%, #a82d2d 23.07%, white 23.07%, 
-        white 30.77%, #a82d2d 30.77%, #a82d2d 38.46%, white 38.46%, white 46.15%, #a82d2d 46.15%, 
-        #a82d2d 53.85%, white 53.85%, white 61.54%, #a82d2d 61.54%, #a82d2d 69.23%, white 69.23%, 
-        white 76.92%, #a82d2d 76.92%, #a82d2d 84.61%, white 84.61%, white 92.31%, #a82d2d 92.31%, 
-        #a82d2d 100%);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-left: 20px; /* Spazio per l'immagine all'inizio della navbar */
-    }
-
-    .navbar-text {
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar a {
-  display: block;
-  background-color: #a82d2d;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  transition: transform 0.3s ease-in-out;
-  padding: 14px 16px;
-  font-size: 25px; /* Aggiungi la dimensione del font desiderata */
-  font-weight: bold; /* Aggiungi grassetto al testo */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Aggiungi ombreggiatura al testo */
-}
-
-    .navbar a:hover {
-      background-color: red;
-      color: white;
-      transform: scale(1.1);
-    }
-
-    /* Aggiungi spazio prima di "Home" e dopo "Revolution" */
-    .navbar a:first-child::before,
-    .navbar a:last-child::after {
-      content: '\00a0'; /* Aggiungi uno spazio invisibile prima di "Home" e dopo "Revolution" */
-      margin: 0 46px; /* Regola lo spazio aggiunto */
-    }
-
-    /* Aggiungi immagine all'inizio della navbar */
-    .navbar-image {
-      margin-right: 20px; /* Spazio tra l'immagine e il testo */
-      position: relative;
-    }
-	.navbar a.active {
-  background-color: red;
-  color: white;
-  transform: scale(1.1);
-}
-    .navbar-image img {
-margin-top: -24px;
-      width: 80px; /* Larghezza dell'immagine */
-      height: 55px; /* Altezza dell'immagine */
-      object-fit: cover;
-      margin-left: -20px;
-    }
- .content {
-  
-      margin-top: 55px;
-margin-left: 55px;
-      padding: 30px;
-	margin-right: 50px;
-  
-    }
- h2 {
-
-      font-size: 32px;
-      color: black;
-      margin-right: 50px;
-margin-bottom: -5px;
-margin-left: 130px;
-
-    }
-    p {
-
-      font-size: 18px;
-      color: #555;
-margin-left: 130px;
-      margin-right: 400px;
-      line-height: 1.5;
-      text-align: justify;
-      
-    }
- 
-
-body {
-  background-color:#ebe8e1; /* Modifica il colore dello sfondo */
-  margin: 0;
-}
-
-.content .textbox {
-  content: '';
-  display: block;
-  position: fixed;
-  color: black; /* Colore del testo */
-  margin-left: -70px; /* Regola la posizione della casella rispetto al testo */
-  margin-top: 40px; /* Regola la posizione della casella rispetto al testo */
-font-size: 20px; /* Aggiungi la dimensione del font desiderata */
-  /* Aggiungi grassetto al testo */
- 
-}
-.textbox a {
-        color: #000000; /* Cambia il colore del testo del link a rosso (#ff0000) */
-        text-decoration: none; /* Rimuove la sottolineatura del link */
-    }
-.content .textbox:nth-child(2) {
-  margin-top: 120px; /* Regola la distanza tra la seconda casella e la prima */
-}
-
-.content .textbox:nth-child(3) {
-  margin-top: 200px; /* Regola la distanza tra la terza casella e la seconda */
-}
-.content .textbox:nth-child(4) {
-  margin-top: 280px; /* Regola la distanza tra la quarta casella e la terza */
-}
-/* Modifica la spessore e la forma della linea verticale */
-h2:before, p:before {
-  content: '';
-  display: block;
-  position: fixed;
-  height: 80%; /* Modifica la lunghezza della linea (può essere in pixel o percentuale) */
-  width: 7px; /* Modifica lo spessore della linea */
-  background-color: #ccc; /* Colore grigio */
-  margin-left: -30px;
-  border-radius: 12px; /* Aggiungi l'arrotondamento */
-  top: 125px; /* Regola il margine superiore rispetto alla navbar */
-}
-
-/* Aggiungi l'arrotondamento solo alla parte superiore della linea */
-h2:before {
-  margin-top: -16px;
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
-}
-
-/* Aggiungi l'arrotondamento solo alla parte inferiore della linea */
-p:before {
-  margin-top: -8px;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-}
-    .custom-image {
-      border: 2px solid #a82d2d;
-      border-radius: 8px;
-      overflow: hidden;
-      width: 400px; /*80- 55 */
-      height: 400px;
-      margin-top: 500x;
-      margin-left: 1100px;
-    }
-
-    .custom-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .custom-image2 {
-      border: 2px solid #a82d2d;
-      border-radius: 8px;
-      overflow: hidden;
-      width: 400px; /*80- 55 */
-      height: 400px;
-      margin-top: -930px;
-      margin-left: 1080px;
-    }
-
-    .custom-image2 img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-   
-    justify-content: center;
-    border-radius: 10px;
-    width: 400px;
-    height: 400px;
-    margin-left: 1050px;
-    margin-top: -1040px;
-    
-}
-
-.flex-container > a {
-    flex-basis: 25%;
-   
-    text-align: center;           
-    text-decoration: overline;           
-    background-color: red;
-    border-radius: 30px;
-  
-  
-}
-
-.flex-container img {
-    object-fit: fill;
-    height: 180px;
-    width: 140px;
-    border-radius: 30px;
-    background-color: red;
-     margin: 10px;
-     padding:3px;
-}
- 
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+  <img src="img/bandd.png" alt="Immagine" style="z-index: 2; position: fixed; top: 0; left: 0; height: 50px;">
   <div class="navbar">
-    <div class="navbar-text">
-      <div class="navbar-image">
-        <img src="img/bandd.png" alt="Immagine">
+    <a href="Illuminismo.html" class="nav-link active">ILLUMINISMO</a>
+    <a href="Storia.html" class="nav-link">HOME</a>
+    <a href="Rivoluzione.html" class="nav-link">RIVOLUZIONE AMERICANA</a>
+  </div>
+
+  <div class="container">
+    <div class="content-drawer">
+      <div class="textbox">
+        <a href="LLpersonaggi.html">🗿 Personaggi</a>
       </div>
-      <a href="Illuminismo.html" class="nav-link active">ILLUMINISMO</a>
+      <div class="textbox">
+        <a href="LLcause.html">💥 Cause</a>
+      </div>
+      <div class="textbox">
+        <b><a href="LLconseguenze.html">📜 <u>Conseguenze</u></a></b>
+      </div>
     </div>
-    <a href="Storia.html" class="nav-link ">HOME</a>
-    <a href="Rivoluzione.html" class="nav-link ">RIVOLUZIONE AMERICANA</a>
+    <div class="content">
+      <h1>LE CONSEGUENZE</h1>
+
+      <p>L'Illuminismo ha avuto profonde conseguenze su molteplici livelli, influenzando la politica, la filosofia, la
+        scienza, l'economia e la società nel suo complesso. Alcune delle principali conseguenze includono: <br>
+      </p>
+      <p>
+        <b>❗ Affermazione dei Diritti Individuali</b>: L'Illuminismo ha sostenuto l'importanza dei diritti individuali e
+        ha contribuito a creare un fondamento concettuale per la difesa dei diritti umani. L'idea che ogni individuo
+        abbia
+        diritti inalienabili ha avuto un impatto duraturo sulle costituzioni e sui sistemi legali di molte nazioni.
+      </p>
+
+      <p> <b>❗ Sviluppo del Pensiero Democratico</b>: Le idee di filosofi come John Locke e Jean-Jacques Rousseau hanno
+        contribuito allo sviluppo del pensiero democratico. L'idea che il governo debba derivare il consenso popolare e
+        che i cittadini abbiano il diritto di partecipare al processo decisionale ha influenzato la creazione di sistemi
+        democratici.</p>
+
+      <p> <b>❗ Separazione dei Poteri</b>: Montesquieu, uno dei pensatori illuministi, ha proposto la teoria della
+        separazione dei poteri, che ha avuto un impatto significativo sulla struttura dei governi moderni. La divisione
+        dei poteri legislativo, esecutivo e giudiziario è diventata una caratteristica chiave delle costituzioni
+        democratiche.</p>
+
+      <p> <b>❗ Rivoluzioni e Movimenti di Liberazione</b>: Le idee dell'Illuminismo hanno alimentato movimenti
+        rivoluzionari, come la Rivoluzione Americana (1775-1783) e la Rivoluzione Francese (1789-1799). Questi eventi
+        hanno portato a cambiamenti politici radicali, inclusa l'abolizione delle monarchie assolute e l'instaurazione
+        di
+        repubbliche.</p>
+
+      <p><b>❗ Avanzamenti Scientifici e Tecnologici</b>: L'Illuminismo ha promosso l'approccio scientifico e razionale
+        alla comprensione del mondo. Ciò ha contribuito agli avanzamenti scientifici e tecnologici che hanno plasmato
+        l'era moderna, con importanti scoperte in campi come la fisica, la chimica e la medicina.</p>
+
+      <p> <b>❗ Crescita dell'Istruzione e dell'Alfabetizzazione</b>: L'idea che l'istruzione sia fondamentale per il
+        progresso sociale è stata sostenuta dagli illuministi. Ciò ha contribuito alla diffusione dell'istruzione e
+        all'aumento dei tassi di alfabetizzazione nelle società europee.</p>
+
+      <p> <b>❗ Critica alle Ingiustizie Sociali</b>: Gli illuministi hanno criticato le ingiustizie sociali, inclusi i
+        privilegi ereditari e le disuguaglianze economiche. Queste critiche hanno ispirato movimenti futuri per i
+        diritti
+        civili e la giustizia sociale.</p>
+      <p> <b>❗ Tolleranza Religiosa</b>: L'Illuminismo ha sostenuto la tolleranza religiosa e la separazione tra Stato e
+        Chiesa. Questo ha influenzato il concetto di libertà religiosa e ha contribuito alla creazione di società più
+        aperte e pluraliste.</p>
+
+    </div>
+    <div class="immagini">
+      <div class="custom-image">
+        <img src="img/guerraa.jpg" alt="Immg">
+      </div>
+    </div>
   </div>
-	
-   <div class="content">
-    <div class="textbox">
-      <a href="LLpersonaggi.html">🗿 Personaggi</a>
-  </div>
-  <div class="textbox">
-    <a href="LLcause.html">💥 Cause</a>
-</div>
-<div class="textbox">
-    <b><a href="LLconseguenze.html">📜 <u>Conseguenze</u></a></b>
-  </div>
-
-    <h2>LE CONSEGUENZE</h2>
-    
- <p>L'Illuminismo ha avuto profonde conseguenze su molteplici livelli, influenzando la politica, la filosofia, la scienza, l'economia e la società nel suo complesso. Alcune delle principali conseguenze includono: <br>
-    <b>❗ Affermazione dei Diritti Individuali</b>:  L'Illuminismo ha sostenuto l'importanza dei diritti individuali e ha contribuito a creare un fondamento concettuale per la difesa dei diritti umani. L'idea che ogni individuo abbia diritti inalienabili ha avuto un impatto duraturo sulle costituzioni e sui sistemi legali di molte nazioni.</p>
-
-    <p> <b>❗ Sviluppo del Pensiero Democratico</b>: Le idee di filosofi come John Locke e Jean-Jacques Rousseau hanno contribuito allo sviluppo del pensiero democratico. L'idea che il governo debba derivare il consenso popolare e che i cittadini abbiano il diritto di partecipare al processo decisionale ha influenzato la creazione di sistemi democratici.</p>
-        
-    <p> <b>❗ Separazione dei Poteri</b>:  Montesquieu, uno dei pensatori illuministi, ha proposto la teoria della separazione dei poteri, che ha avuto un impatto significativo sulla struttura dei governi moderni. La divisione dei poteri legislativo, esecutivo e giudiziario è diventata una caratteristica chiave delle costituzioni democratiche.</p>
-        
-    <p>  <b>❗ Rivoluzioni e Movimenti di Liberazione</b>: Le idee dell'Illuminismo hanno alimentato movimenti rivoluzionari, come la Rivoluzione Americana (1775-1783) e la Rivoluzione Francese (1789-1799). Questi eventi hanno portato a cambiamenti politici radicali, inclusa l'abolizione delle monarchie assolute e l'instaurazione di repubbliche.</p>
-        
-    <p><b>❗ Avanzamenti Scientifici e Tecnologici</b>: L'Illuminismo ha promosso l'approccio scientifico e razionale alla comprensione del mondo. Ciò ha contribuito agli avanzamenti scientifici e tecnologici che hanno plasmato l'era moderna, con importanti scoperte in campi come la fisica, la chimica e la medicina.</p>
-        
-    <p> <b>❗ Crescita dell'Istruzione e dell'Alfabetizzazione</b>: L'idea che l'istruzione sia fondamentale per il progresso sociale è stata sostenuta dagli illuministi. Ciò ha contribuito alla diffusione dell'istruzione e all'aumento dei tassi di alfabetizzazione nelle società europee.</p>
-        
-        <p> <b>❗ Critica alle Ingiustizie Sociali</b>:   Gli illuministi hanno criticato le ingiustizie sociali, inclusi i privilegi ereditari e le disuguaglianze economiche. Queste critiche hanno ispirato movimenti futuri per i diritti civili e la giustizia sociale.</p>
-        <p> <b>❗ Tolleranza Religiosa</b>:  L'Illuminismo ha sostenuto la tolleranza religiosa e la separazione tra Stato e Chiesa. Questo ha influenzato il concetto di libertà religiosa e ha contribuito alla creazione di società più aperte e pluraliste.</p>
-
-            
-          </div>
-          <div class="custom-image2">
-            <img src="img/guerraa.jpg" alt="Immg">
-
 </body>
+
 </html>

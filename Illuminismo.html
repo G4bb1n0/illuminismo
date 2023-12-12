@@ -1,238 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family:'Times New Roman', serif;
-    }
-
-    .navbar {
-border-bottom: 2px solid black; /* Puoi regolare lo spessore e il colore del bordo */
-      overflow: hidden;
-      background: linear-gradient(to bottom, 
-        #a82d2d 7.69%, white 7.69%, white 15.38%, #a82d2d 15.38%, #a82d2d 23.07%, white 23.07%, 
-        white 30.77%, #a82d2d 30.77%, #a82d2d 38.46%, white 38.46%, white 46.15%, #a82d2d 46.15%, 
-        #a82d2d 53.85%, white 53.85%, white 61.54%, #a82d2d 61.54%, #a82d2d 69.23%, white 69.23%, 
-        white 76.92%, #a82d2d 76.92%, #a82d2d 84.61%, white 84.61%, white 92.31%, #a82d2d 92.31%, 
-        #a82d2d 100%);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-left: 20px; /* Spazio per l'immagine all'inizio della navbar */
-    }
-
-    .navbar-text {
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar a {
-  display: block;
-  background-color: #a82d2d;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  transition: transform 0.3s ease-in-out;
-  padding: 14px 16px;
-  font-size: 25px; /* Aggiungi la dimensione del font desiderata */
-  font-weight: bold; /* Aggiungi grassetto al testo */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Aggiungi ombreggiatura al testo */
-}
-
-    .navbar a:hover {
-      background-color: red;
-      color: white;
-      transform: scale(1.1);
-    }
-
-    /* Aggiungi spazio prima di "Home" e dopo "Revolution" */
-    .navbar a:first-child::before,
-    .navbar a:last-child::after {
-      content: '\00a0'; /* Aggiungi uno spazio invisibile prima di "Home" e dopo "Revolution" */
-      margin: 0 46px; /* Regola lo spazio aggiunto */
-    }
-
-    /* Aggiungi immagine all'inizio della navbar */
-    .navbar-image {
-      margin-right: 20px; /* Spazio tra l'immagine e il testo */
-      position: relative;
-    }
-	.navbar a.active {
-  background-color: red;
-  color: white;
-  transform: scale(1.1);
-}
-    .navbar-image img {
-margin-top: -24px;
-      width: 80px; /* Larghezza dell'immagine */
-      height: 55px; /* Altezza dell'immagine */
-      object-fit: cover;
-      margin-left: -20px;
-    }
- .content {
-  
-      margin-top: 55px;
-margin-left: 55px;
-      padding: 30px;
-	margin-right: 50px;
-  
-    }
- h2 {
-
-      font-size: 32px;
-      color: black;
-      margin-right: 50px;
-margin-bottom: -5px;
-margin-left: 130px;
-
-    }
-    p {
-
-      font-size: 18px;
-      color: #555;
-margin-left: 130px;
-      margin-right: 400px;
-      line-height: 1.5;
-      text-align: justify;
-    }
-    .custom-image {
-      border: 2px solid #a82d2d;
-      border-radius: 8px;
-      overflow: hidden;
-      width: 400px; /*80- 55 */
-      height: 275px;
-      margin-top: -450px;
-      margin-left: 1100px;
-    }
-
-    .custom-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .custom-image2 {
-      border: 2px solid #a82d2d;
-      border-radius: 8px;
-      overflow: hidden;
-      width: 400px; /*80- 55 */
-      height: 275px;
-      margin-top: 20px;
-      margin-left: 1100px;
-    }
-
-    .custom-image2 img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-body {
-  background-color:#ebe8e1; /* Modifica il colore dello sfondo */
-  margin: 0;
-}
-
-.content .textbox {
-  content: '';
-  display: block;
-  position: fixed;
-  color: black; /* Colore del testo */
-  margin-left: -70px; /* Regola la posizione della casella rispetto al testo */
-  margin-top: 40px; /* Regola la posizione della casella rispetto al testo */
-font-size: 20px; /* Aggiungi la dimensione del font desiderata */
-  /* Aggiungi grassetto al testo */
- 
-}
-.textbox a {
-        color: #000000; /* Cambia il colore del testo del link a rosso (#ff0000) */
-        text-decoration: none; /* Rimuove la sottolineatura del link */
-    }
-.content .textbox:nth-child(2) {
-  margin-top: 120px; /* Regola la distanza tra la seconda casella e la prima */
-}
-
-.content .textbox:nth-child(3) {
-  margin-top: 200px; /* Regola la distanza tra la terza casella e la seconda */
-}
-.content .textbox:nth-child(4) {
-  margin-top: 280px; /* Regola la distanza tra la quarta casella e la terza */
-}
-/* Modifica la spessore e la forma della linea verticale */
-h2:before, p:before {
-  content: '';
-  display: block;
-  position: fixed;
-  height: 80%; /* Modifica la lunghezza della linea (può essere in pixel o percentuale) */
-  width: 7px; /* Modifica lo spessore della linea */
-  background-color: #ccc; /* Colore grigio */
-  margin-left: -30px;
-  border-radius: 12px; /* Aggiungi l'arrotondamento */
-  top: 125px; /* Regola il margine superiore rispetto alla navbar */
-}
-
-/* Aggiungi l'arrotondamento solo alla parte superiore della linea */
-h2:before {
-  margin-top: -16px;
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
-}
-
-/* Aggiungi l'arrotondamento solo alla parte inferiore della linea */
-p:before {
-  margin-top: -8px;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-}
-
- 
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+  <img src="img/bandd.png" alt="Immagine" style="z-index: 2; position: fixed; top: 0; left: 0; height: 50px;">
   <div class="navbar">
-    <div class="navbar-text">
-      <div class="navbar-image">
-        <img src="img/bandd.png" alt="Immagine">
+    <a href="Illuminismo.html" class="nav-link active">ILLUMINISMO</a>
+    <a href="Storia.html" class="nav-link">HOME</a>
+    <a href="Rivoluzione.html" class="nav-link">RIVOLUZIONE AMERICANA</a>
+  </div>
+
+  <div class="container">
+    <div class="content-drawer">
+      <div class="textbox">
+        <a href="LLpersonaggi.html">🗿 Personaggi</a>
       </div>
-      <a href="Illuminismo.html" class="nav-link active">ILLUMINISMO</a>
+      <div class="textbox">
+        <a href="LLcause.html">💥 Cause</a>
+      </div>
+      <div class="textbox">
+        <a href="LLconseguenze.html">📜 Conseguenze</a>
+      </div>
     </div>
-    <a href="Storia.html" class="nav-link ">HOME</a>
-    <a href="Rivoluzione.html" class="nav-link ">RIVOLUZIONE AMERICANA</a>
-  </div>
-	
-   <div class="content">
-    <div class="textbox">
-      <a href="LLpersonaggi.html">🗿 Personaggi</a>
-  </div>
-  <div class="textbox">
-    <a href="LLcause.html">💥 Cause</a>
+    <div class="content">
+      <h1>ILLUMINISMO: INTRODUZIONE</h1>
+
+      <p>Benvenuti nella pagina dedicata all'Illuminismo, un movimento culturale che ha lasciato un'impronta indelebile
+        sulla storia del pensiero umano. L'Illuminismo, sviluppatosi principalmente nel XVIII secolo in Europa, ha
+        rappresentato un periodo di profondo cambiamento intellettuale, sociale e politico. Caratterizzato da una
+        fiducia nel potere della ragione umana, dell'educazione e della libertà individuale, l'Illuminismo ha gettato le
+        basi per molte delle idee e dei valori che ancora oggi definiscono la nostra società.<br>
+
+        Attraverso questa pagina, esploreremo i principali concetti e i pensatori chiave dell'Illuminismo, analizzando
+        come le loro idee abbiano plasmato l'evoluzione del pensiero occidentale. Dalla critica alle autorità
+        tradizionali alla promozione della libertà di pensiero, dall'importanza dell'istruzione alla ricerca della
+        felicità come diritto fondamentale, l'Illuminismo ha influenzato molteplici aspetti della nostra vita
+        contemporanea.<br>
+
+        Unisciti a noi in questo viaggio attraverso le idee illuministe, scopri le loro radici storiche e la loro
+        rilevanza nel contesto attuale. Esplora le opere dei filosofi illuministi e approfondisci il loro impatto sulla
+        politica, la scienza, la letteratura e l'arte. Lasciati ispirare dalle idee che hanno contribuito a plasmare il
+        mondo moderno e rifletti sulla continua ricerca della conoscenza e della verità.<br>
+
+        Siamo entusiasti di condividere con te questo affascinante capitolo della storia intellettuale e di esplorare
+        insieme il lascito duraturo dell'Illuminismo nella nostra società contemporanea. Benvenuti nel mondo
+        dell'Illuminismo!<br>
+      </p>
     </div>
-    <div class="textbox">
-      <a href="LLconseguenze.html">📜 Conseguenze</a>
+    <div class="immagini">
+      <div class="custom-image">
+        <img src="img/illumi.jpg" alt="Immg">
+      </div>
+      <div class="custom-image">
+        <img src="img/illu2.avif" alt="Immg">
+      </div>
     </div>
-    <h2>ILLUMINISMO: INTRODUZIONE</h2>
-
-    <p>Benvenuti nella pagina dedicata all'Illuminismo, un movimento culturale che ha lasciato un'impronta indelebile sulla storia del pensiero umano. L'Illuminismo, sviluppatosi principalmente nel XVIII secolo in Europa, ha rappresentato un periodo di profondo cambiamento intellettuale, sociale e politico. Caratterizzato da una fiducia nel potere della ragione umana, dell'educazione e della libertà individuale, l'Illuminismo ha gettato le basi per molte delle idee e dei valori che ancora oggi definiscono la nostra società.<br>
-
-    Attraverso questa pagina, esploreremo i principali concetti e i pensatori chiave dell'Illuminismo, analizzando come le loro idee abbiano plasmato l'evoluzione del pensiero occidentale. Dalla critica alle autorità tradizionali alla promozione della libertà di pensiero, dall'importanza dell'istruzione alla ricerca della felicità come diritto fondamentale, l'Illuminismo ha influenzato molteplici aspetti della nostra vita contemporanea.<br>
-    
-    Unisciti a noi in questo viaggio attraverso le idee illuministe, scopri le loro radici storiche e la loro rilevanza nel contesto attuale. Esplora le opere dei filosofi illuministi e approfondisci il loro impatto sulla politica, la scienza, la letteratura e l'arte. Lasciati ispirare dalle idee che hanno contribuito a plasmare il mondo moderno e rifletti sulla continua ricerca della conoscenza e della verità.<br>
-    
-    Siamo entusiasti di condividere con te questo affascinante capitolo della storia intellettuale e di esplorare insieme il lascito duraturo dell'Illuminismo nella nostra società contemporanea. Benvenuti nel mondo dell'Illuminismo! <br>     </p>
   </div>
-  <div class="custom-image">
-  <img src="img/illumi.jpg" alt="Immg">
-</div>
-<div class="custom-image2">
-  <img src="img/illu2.avif" alt="Immg">
-</div>
-  </div>
-
 </body>
+
 </html>

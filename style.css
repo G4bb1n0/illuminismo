@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', serif;
+    background-color: #ebe8e1;
+
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar {
+    border-bottom: 2px solid black;
+    /* Puoi regolare lo spessore e il colore del bordo */
+    overflow: hidden;
+    background: linear-gradient(to bottom,
+            #a82d2d 7.69%, white 7.69%, white 15.38%, #a82d2d 15.38%, #a82d2d 23.07%, white 23.07%,
+            white 30.77%, #a82d2d 30.77%, #a82d2d 38.46%, white 38.46%, white 46.15%, #a82d2d 46.15%,
+            #a82d2d 53.85%, white 53.85%, white 61.54%, #a82d2d 61.54%, #a82d2d 69.23%, white 69.23%,
+            white 76.92%, #a82d2d 76.92%, #a82d2d 84.61%, white 84.61%, white 92.31%, #a82d2d 92.31%,
+            #a82d2d 100%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Spazio per l'immagine all'inizio della navbar */
+    z-index: 1;
+    
+}
+
+.navbar-text {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    display: block;
+    background-color: #a82d2d;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+    padding: 14px 16px;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.navbar a:hover {
+    background-color: red;
+    color: white;
+    transform: scale(1.1);
+}
+
+.navbar a.active {
+    background-color: red;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Aggiungi immagine all'inizio della navbar */
+.navbar-image {
+    margin-right: 20px;
+    /* Spazio tra l'immagine e il testo */
+    position: relative;
+}
+
+.navbar-image img {
+    margin-top: -24px;
+    width: 80px;
+    /* Larghezza dell'immagine */
+    height: 55px;
+    /* Altezza dell'immagine */
+    object-fit: cover;
+    margin-left: -20px;
+}
+
+/* Nuovo css (è stato anche leggermente modificato il precedente relativo alla navbar)*/
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #555;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+hr {
+    border-top: 1px solid #a82d2d;
+}
+
+h2:before,
+p:before {
+    content: '';
+    display: flex;
+    position: fixed;
+    height: 80%;
+    width: 7px;
+    background-color: #ccc;
+    margin-left: -30px;
+    border-radius: 12px;
+    top: 125px;
+}
+
+.container {
+    display: flex;
+    margin-top: 100px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.content-drawer {
+    width: 250px;
+}
+
+.textbox {
+    line-height: 4;
+    font-size: 20px;
+}
+
+.content {
+    text-align: justify;
+    margin-right: 5%;
+    margin-left: 30px;
+    width: 70%;
+}
+
+.immagini {
+    width: 30%;
+}
+
+.custom-image {
+    width: 100%;
+}
+
+.custom-image>img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 2px solid #a82d2d;
+
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    width: 100%;
+}
+
+.flex-container>a {
+    text-align: center;
+    text-decoration: overline;
+    background-color: red;
+    border-radius: 30px;
+}
+
+.flex-container img {
+    object-fit: fill;
+    height: 180px;
+    width: 140px;
+    border-radius: 30px;
+    background-color: red;
+    margin: 5px;
+    padding: 3px;
+}
+
+/* Aggiungi uno stile per il tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    /* Modifica la posizione rispetto all'elemento padre */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

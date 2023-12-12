@@ -1,375 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family:'Times New Roman', serif;
-      text-align: justify;
-    }
-
-    .navbar {
-border-bottom: 2px solid black; /* Puoi regolare lo spessore e il colore del bordo */
-      overflow: hidden;
-      background: linear-gradient(to bottom, 
-        #a82d2d 7.69%, white 7.69%, white 15.38%, #a82d2d 15.38%, #a82d2d 23.07%, white 23.07%, 
-        white 30.77%, #a82d2d 30.77%, #a82d2d 38.46%, white 38.46%, white 46.15%, #a82d2d 46.15%, 
-        #a82d2d 53.85%, white 53.85%, white 61.54%, #a82d2d 61.54%, #a82d2d 69.23%, white 69.23%, 
-        white 76.92%, #a82d2d 76.92%, #a82d2d 84.61%, white 84.61%, white 92.31%, #a82d2d 92.31%, 
-        #a82d2d 100%);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-left: 20px; /* Spazio per l'immagine all'inizio della navbar */
-      z-index: 1000;
-    }
-
-    .navbar-text {
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar a {
-  display: block;
-  background-color: #a82d2d;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  transition: transform 0.3s ease-in-out;
-  padding: 14px 16px;
-  font-size: 25px; /* Aggiungi la dimensione del font desiderata */
-  font-weight: bold; /* Aggiungi grassetto al testo */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Aggiungi ombreggiatura al testo */
-}
-
-    .navbar a:hover {
-      background-color: red;
-      color: white;
-      transform: scale(1.1);
-    }
-
-    /* Aggiungi spazio prima di "Home" e dopo "Revolution" */
-    .navbar a:first-child::before,
-    .navbar a:last-child::after {
-      content: '\00a0'; /* Aggiungi uno spazio invisibile prima di "Home" e dopo "Revolution" */
-      margin: 0 46px; /* Regola lo spazio aggiunto */
-    }
-
-    /* Aggiungi immagine all'inizio della navbar */
-    .navbar-image {
-      margin-right: 20px; /* Spazio tra l'immagine e il testo */
-      position: relative;
-    }
-	.navbar a.active {
-  background-color: red;
-  color: white;
-  transform: scale(1.1);
-}
-    .navbar-image img {
-margin-top: -24px;
-      width: 80px; /* Larghezza dell'immagine */
-      height: 55px; /* Altezza dell'immagine */
-      object-fit: cover;
-      margin-left: -20px;
-    }
- .content {
-  
-      margin-top: 55px;
-margin-left: 55px;
-      padding: 30px;
-	margin-right: 50px;
-  
-    }
- h2 {
-
-      font-size: 32px;
-      color: black;
-      margin-right: 50px;
-margin-bottom: -5px;
-margin-left: 130px;
-
-    }
-    p {
-
-      font-size: 18px;
-      color: #555;
-margin-left: 130px;
-      margin-right: 400px;
-      line-height: 1.5;
-      text-align: justify;
-      
-    }
-    p::after {
-  content: '';
-  display: block;
-  margin-top: 12px; /* Regola la distanza verticale tra le linee */
-  margin-bottom: 30px; /* Regola la distanza verticale tra le linee */
-  margin-left: 12px;
-  width: 95%;
-  height: 1px;
-  background-color: #a82d2d; /* Colore della linea */
-  content: '\00a0'; /* Assicura che la linea sia visibile anche senza testo */
-  box-sizing: border-box; /* Assicura che il bordo non influenzi le dimensioni totali */
-  border: 0; /* Assicura che non ci siano ulteriori stili di bordo */
-  padding: 0; /* Assicura che non ci siano ulteriori stili di padding */
-}
-
-body {
-  background-color:#ebe8e1; /* Modifica il colore dello sfondo */
-  margin: 0;
-}
-
-.content .textbox {
-  content: '';
-  display: block;
-  position: fixed;
-  color: black; /* Colore del testo */
-  margin-left: -70px; /* Regola la posizione della casella rispetto al testo */
-  margin-top: 40px; /* Regola la posizione della casella rispetto al testo */
-font-size: 20px; /* Aggiungi la dimensione del font desiderata */
-  /* Aggiungi grassetto al testo */
- 
-}
-.textbox a {
-        color: #000000; /* Cambia il colore del testo del link a rosso (#ff0000) */
-        text-decoration: none; /* Rimuove la sottolineatura del link */
-    }
-.content .textbox:nth-child(2) {
-  margin-top: 120px; /* Regola la distanza tra la seconda casella e la prima */
-}
-
-.content .textbox:nth-child(3) {
-  margin-top: 200px; /* Regola la distanza tra la terza casella e la seconda */
-}
-.content .textbox:nth-child(4) {
-  margin-top: 280px; /* Regola la distanza tra la quarta casella e la terza */
-}
-/* Modifica la spessore e la forma della linea verticale */
-h2:before, p:before {
-  content: '';
-  display: block;
-  position: fixed;
-  height: 80%; /* Modifica la lunghezza della linea (può essere in pixel o percentuale) */
-  width: 7px; /* Modifica lo spessore della linea */
-  background-color: #ccc; /* Colore grigio */
-  margin-left: -30px;
-  border-radius: 12px; /* Aggiungi l'arrotondamento */
-  top: 125px; /* Regola il margine superiore rispetto alla navbar */
-}
-
-/* Aggiungi l'arrotondamento solo alla parte superiore della linea */
-h2:before {
-  margin-top: -16px;
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
-}
-
-/* Aggiungi l'arrotondamento solo alla parte inferiore della linea */
-p:before {
-  margin-top: -8px;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
-}
-    .custom-image {
-      border: 2px solid #a82d2d;
-      border-radius: 8px;
-      overflow: hidden;
-      width: 140px; /*80- 55 */
-      height: 130px;
-      margin-top: -1030px;
-      margin-left: 1100px;
-    }
-
-    .custom-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .custom-image2 {
-      border: 2px solid #a82d2d;
-      border-radius: 8px;
-      overflow: hidden;
-      width: 140px; /*80- 55 */
-      height: 130px;
-      margin-top: -1030px;
-      margin-left: 1000px;
-    }
-
-    .custom-image2 img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-   
-    justify-content: center;
-    border-radius: 10px;
-    width: 400px;
-    height: 400px;
-    margin-left: 1050px;
-    margin-top: -1040px;
-    
-}
-
-.flex-container > a {
-    flex-basis: 25%;
-   
-    text-align: center;           
-    text-decoration: overline;           
-    background-color: red;
-    border-radius: 30px;
-  
-  
-}
-
-.flex-container img {
-    object-fit: fill;
-    height: 180px;
-    width: 140px;
-    border-radius: 30px;
-    background-color: red;
-     margin: 5px;
-     padding:3px;
-}
- /* Aggiungi uno stile per il tooltip */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 100%; /* Modifica la posizione rispetto all'elemento padre */
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-  }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+  <img src="img/bandd.png" alt="Immagine" style="z-index: 2; position: fixed; top: 0; left: 0; height: 50px;">
   <div class="navbar">
-    <div class="navbar-text">
-      <div class="navbar-image">
-        <img src="img/bandd.png" alt="Immagine">
-      </div>
-      <a href="Illuminismo.html" class="nav-link">ILLUMINISMO</a>
-    </div>
-    <a href="Storia.html" class="nav-link ">HOME</a>
+    <a href="Illuminismo.html" class="nav-link">ILLUMINISMO</a>
+    <a href="Storia.html" class="nav-link">HOME</a>
     <a href="Rivoluzione.html" class="nav-link active">RIVOLUZIONE AMERICANA</a>
   </div>
-	
-   <div class="content">
-    <div class="textbox">
-      <b><a href="RApersonaggi.html">🗿 <u>Personaggi</u></a></b>
-  </div>
-  <div class="textbox">
-    <a href="RAcause.html">💥 Cause</a>
-</div>
-<div class="textbox">
-  <a href="RAeventi.html">🌍 Eventi</a>
-</div>
-<div class="textbox">
-  <a href="RAconseguenze.html">📜 Conseguenze</a>
-</div>
-    <h2>I PERSONAGGI</h2>
-    <p><b>➛ George Washington</b>: Comandante in capo dell'esercito continentale e più tardi il primo presidente degli Stati Uniti.</p>
 
-    <p> <b>➛ Thomas Jefferson</b>: Principalmente noto come l'autore della Dichiarazione d'Indipendenza, Jefferson fu anche il terzo presidente degli Stati Uniti.</p>
-        
-    <p> <b>➛ John Adams</b>: Fu uno dei firmatari della Dichiarazione d'Indipendenza e il secondo presidente degli Stati Uniti.</p>
-        
-    <p>  <b>➛ Benjamin Franklin</b>: Un uomo rinascimentale, Franklin fu diplomatico, scienziato, scrittore e firmatario della Dichiarazione d'Indipendenza.</p>
-        
-    <p><b>➛ Alexander Hamilton</b>: Uno dei Padri Fondatori, Hamilton fu uno dei principali autori dei Federalisti e il primo Segretario del Tesoro degli Stati Uniti.</p>
-        
-    <p> <b>➛ Thomas Paine</b>: Autore di "Common Sense", un pamphlet che ebbe un'influenza significativa nel sostenere l'indipendenza americana.</p>
-        
-        <p> <b>➛ John Hancock</b>: Primo firmatario della Dichiarazione d'Indipendenza e presidente del Congresso Continentale.</p>
-        
-            <p>  <b>➛ Paul Revere</b>: Notissimo per il suo famoso giro di avvertimento, avvisando i coloni dell'arrivo delle truppe britanniche.</p>
-        
-                <p>  <b>➛ Betsy Ross</b>: Secondo la tradizione, fu la cucitrice della prima bandiera degli Stati Uniti.</p>
-        
-                    <p> <b>➛ Marquis de Lafayette</b>: Ufficiale francese che giocò un ruolo significativo nell'aiutare le colonie durante la Rivoluzione.</p>
-        
-                        <p> <b>➛ Benedict Arnold</b>: Inizialmente un generale dell'esercito continentale, ma passò successivamente ai britannici, diventando un traditore.</p>
-  </div>
-  <div class="flex-container">
-    <div class="tooltip">
-      <img src="img/george.avif" alt="George Washington" title="George Washington">
-      <div class="tooltiptext">George Washington</div>
+  <div class="container">
+    <div class="content-drawer">
+      <div class="textbox">
+        <b><a href="RApersonaggi.html">🗿 <u>Personaggi</u></a></b>
+      </div>
+      <div class="textbox">
+        <a href="RAcause.html">💥 Cause</a>
+      </div>
+      <div class="textbox">
+        <a href="RAeventi.html">🌍 Eventi</a>
+      </div>
+      <div class="textbox">
+        <a href="RAconseguenze.html">📜 Conseguenze</a>
+      </div>
     </div>
-    <div class="tooltip">
-      <img src="img/tommy.avif" alt="Thomas Jefferson" title="Thomas Jefferson">
-      <div class="tooltiptext">Thomas Jeffersont</div>
-    </div>
-    
-    <div class="tooltip">
-      <img src="img/jonny.jpg" alt=" John Adams" title="John Adams">
-      <div class="tooltiptext"> John Adams</div>
-    </div>
-    
-    <div class="tooltip">
-      <img src="img/benji.jpg" alt="Benjamin Franklin" title="Benjamin Franklin">
-      <div class="tooltiptext">Benjamin Franklin</div>
-    </div>
-    <div class="tooltip">
-      <img src="img/alex.jpg" alt="Alexander Hamilton" title="Alexander Hamilton">
-      <div class="tooltiptext">Alexander Hamilton</div>
-    </div>
-    
-    <div class="tooltip">
-      <img src="img/thomas.jpg" alt="Thomas Paine" title="Thomas Paine">
-      <div class="tooltiptext">Thomas Paine</div>
-    </div>
-    
-    <div class="tooltip">
-      <img src="img/john.jpg" alt="John Hancock" title="John Hancock">
-      <div class="tooltiptext">John Hancock</div>
-    </div>
-    <div class="tooltip">
-      <img src="img/paolo.jpg" alt="Paul Revere" title="Paul Revere">
-      <div class="tooltiptext">Paul Revere</div>
-    </div>
-    
-    <div class="tooltip">
-      <img src="img/betys.png" alt="Betsy Ross" title="Betsy Ross">
-      <div class="tooltiptext">Betsy Ross</div>
-    </div>
-    <div class="tooltip">
-      <img src="img/mark.jpg" alt="Marquis de Lafayette" title="Marquis de Lafayette">
-      <div class="tooltiptext">Marquis de Lafayette</div>
-    </div>
-    <div class="tooltip">
-      <img src="img/benedd.jpg" alt="Benedict Arnold" title="Benedict Arnold">
-      <div class="tooltiptext">Benedict Arnold</div>
-    </div>
-</div>
-  </div>
+    <div class="content">
+      <h1>I PERSONAGGI</h1>
 
+        <hr>
+
+      <p><b>➛ George Washington</b>: Comandante in capo dell'esercito continentale e più tardi il primo presidente degli
+        Stati Uniti.</p>
+
+        <hr>
+
+      <p> <b>➛ Thomas Jefferson</b>: Principalmente noto come l'autore della Dichiarazione d'Indipendenza, Jefferson fu
+        anche il terzo presidente degli Stati Uniti.</p>
+
+        <hr>
+      
+      <p> <b>➛ John Adams</b>: Fu uno dei firmatari della Dichiarazione d'Indipendenza e il secondo presidente degli
+        Stati
+        Uniti.</p>
+
+        <hr>
+
+      <p> <b>➛ Benjamin Franklin</b>: Un uomo rinascimentale, Franklin fu diplomatico, scienziato, scrittore e
+        firmatario
+        della Dichiarazione d'Indipendenza.</p>
+
+        <hr>
+
+      <p><b>➛ Alexander Hamilton</b>: Uno dei Padri Fondatori, Hamilton fu uno dei principali autori dei Federalisti e
+        il
+        primo Segretario del Tesoro degli Stati Uniti.</p>
+
+        <hr>
+
+      <p> <b>➛ Thomas Paine</b>: Autore di "Common Sense", un pamphlet che ebbe un'influenza significativa nel sostenere
+        l'indipendenza americana.</p>
+
+        <hr>
+
+      <p> <b>➛ John Hancock</b>: Primo firmatario della Dichiarazione d'Indipendenza e presidente del Congresso
+        Continentale.</p>
+
+        <hr>
+
+      <p> <b>➛ Paul Revere</b>: Notissimo per il suo famoso giro di avvertimento, avvisando i coloni dell'arrivo delle
+        truppe britanniche.</p>
+
+        <hr>
+
+      <p> <b>➛ Betsy Ross</b>: Secondo la tradizione, fu la cucitrice della prima bandiera degli Stati Uniti.</p>
+
+        <hr>
+
+      <p> <b>➛ Marquis de Lafayette</b>: Ufficiale francese che giocò un ruolo significativo nell'aiutare le colonie
+        durante la Rivoluzione.</p>
+
+        <hr>
+
+      <p> <b>➛ Benedict Arnold</b>: Inizialmente un generale dell'esercito continentale, ma passò successivamente ai
+        britannici, diventando un traditore.</p>
+
+        <hr>
+
+    </div>
+    <div class="immagini">
+      <div class="flex-container">
+        <div class="tooltip">
+          <img src="img/george.avif" alt="George Washington" title="George Washington">
+          <div class="tooltiptext">George Washington</div>
+        </div>
+        <div class="tooltip">
+          <img src="img/tommy.avif" alt="Thomas Jefferson" title="Thomas Jefferson">
+          <div class="tooltiptext">Thomas Jeffersont</div>
+        </div>
+
+        <div class="tooltip">
+          <img src="img/jonny.jpg" alt=" John Adams" title="John Adams">
+          <div class="tooltiptext"> John Adams</div>
+        </div>
+
+        <div class="tooltip">
+          <img src="img/benji.jpg" alt="Benjamin Franklin" title="Benjamin Franklin">
+          <div class="tooltiptext">Benjamin Franklin</div>
+        </div>
+        <div class="tooltip">
+          <img src="img/alex.jpg" alt="Alexander Hamilton" title="Alexander Hamilton">
+          <div class="tooltiptext">Alexander Hamilton</div>
+        </div>
+
+        <div class="tooltip">
+          <img src="img/thomas.jpg" alt="Thomas Paine" title="Thomas Paine">
+          <div class="tooltiptext">Thomas Paine</div>
+        </div>
+
+        <div class="tooltip">
+          <img src="img/john.jpg" alt="John Hancock" title="John Hancock">
+          <div class="tooltiptext">John Hancock</div>
+        </div>
+        <div class="tooltip">
+          <img src="img/paolo.jpg" alt="Paul Revere" title="Paul Revere">
+          <div class="tooltiptext">Paul Revere</div>
+        </div>
+
+        <div class="tooltip">
+          <img src="img/betys.png" alt="Betsy Ross" title="Betsy Ross">
+          <div class="tooltiptext">Betsy Ross</div>
+        </div>
+        <div class="tooltip">
+          <img src="img/mark.jpg" alt="Marquis de Lafayette" title="Marquis de Lafayette">
+          <div class="tooltiptext">Marquis de Lafayette</div>
+        </div>
+        <div class="tooltip">
+          <img src="img/benedd.jpg" alt="Benedict Arnold" title="Benedict Arnold">
+          <div class="tooltiptext">Benedict Arnold</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
